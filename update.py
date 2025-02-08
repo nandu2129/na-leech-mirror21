@@ -37,14 +37,14 @@ config_file = {
     if not key.startswith("__")
 }
 
-BOT_TOKEN = config_file.get("BOT_TOKEN", "")
+BOT_TOKEN = config_file.get("8140111369:AAEUtglm21w9z59qWi_Kq1CduUn3FmsI6qc", "")
 if not BOT_TOKEN:
     log_error("BOT_TOKEN variable is missing! Exiting now")
     exit(1)
 
-BOT_ID = BOT_TOKEN.split(":", 1)[0]
+BOT_ID = BOT_TOKEN.split("8140111369:AAEUtglm21w9z59qWi_Kq1CduUn3FmsI6qc", 1)[0]
 
-if DATABASE_URL := config_file.get("DATABASE_URL", "").strip():
+if DATABASE_URL := config_file.get("mongodb+srv://vaddenandu70:<Nandu2580>@nandubots.omnod.mongodb.net/?retryWrites=true&w=majority&appName=NanduBots", "").strip():
     try:
         conn = MongoClient(DATABASE_URL, server_api=ServerApi("1"))
         db = conn.mltb
